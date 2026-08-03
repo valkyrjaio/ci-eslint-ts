@@ -7,7 +7,10 @@
         "sourceMap": false,
         "rootDir": ".",
         "types": ["node"],
+        // `extends` replaces `paths` rather than merging it, so the eslint entry that
+        // tsconfig.json declares is repeated here alongside the vitest entry.
         "paths": {
+            "eslint": ["./.github/ci/typescript/node_modules/eslint/lib/types/index.d.ts"],
             "vitest": ["./.github/ci/typescript/node_modules/vitest/dist/index.d.ts"]
         }
     },

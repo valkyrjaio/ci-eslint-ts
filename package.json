@@ -1,10 +1,11 @@
 {
-    "name": "@valkyrjaio/ts-template",
+    "name": "@valkyrjaio/ci-eslint",
     "version": "26.0.2",
-    "description": "A TypeScript package template for the Valkyrja Framework",
+    "description": "Shared ESLint configuration for Valkyrja TypeScript repositories",
     "homepage": "https://www.valkyrja.io",
     "keywords": [
-        "template",
+        "ci",
+        "eslint",
         "valkyrja"
     ],
     "license": "MIT",
@@ -27,6 +28,8 @@
         "node": ">=22"
     },
     "scripts": {
+        "build": "cd .github/ci/typescript && npm run build",
+        "prepublishOnly": "npm run build",
         "typescript": "cd .github/ci/typescript && npm run check",
         "typescript-outdated-check": "cd .github/ci/typescript && npm install && npm outdated",
         "typescript-outdated-check-major-release": "cd .github/ci/typescript && npm install && npm outdated",
@@ -50,5 +53,8 @@
         "root-and-suggested-outdated-check": "cd .github/ci/root-and-suggested && npm install && npm outdated",
         "root-and-suggested-outdated-check-major-release": "cd .github/ci/root-and-suggested && npm install && npm outdated",
         "root-and-suggested-npm-update": "cd .github/ci/root-and-suggested && npm update"
+    },
+    "peerDependencies": {
+        "eslint": ">=9"
     }
 }
