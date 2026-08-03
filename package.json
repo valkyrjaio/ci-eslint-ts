@@ -3,6 +3,13 @@
     "version": "26.0.0",
     "description": "Shared ESLint configuration for Valkyrja TypeScript repositories",
     "homepage": "https://www.valkyrja.io",
+    "bugs": {
+        "url": "https://github.com/valkyrjaio/ci-eslint-ts/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/valkyrjaio/ci-eslint-ts.git"
+    },
     "keywords": [
         "ci",
         "eslint",
