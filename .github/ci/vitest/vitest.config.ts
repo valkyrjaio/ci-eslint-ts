@@ -12,7 +12,17 @@ import { defineConfig } from 'vitest/config';
 const root = fileURLToPath(new URL('../../../', import.meta.url));
 const reportsDirectory = fileURLToPath(new URL('./coverage', import.meta.url));
 
+// Vitest takes the repository root as its root, so a bare specifier in a test resolves from
+// there. eslint is a peer dependency of this package and is installed for this CI tool instead,
+// so the alias names that copy. `tsconfig.json` maps the same specifier for the compiler.
+const eslintApi = fileURLToPath(new URL('./node_modules/eslint/lib/api.js', import.meta.url));
+
 export default defineConfig({
+    resolve: {
+        alias: {
+            eslint: eslintApi,
+        },
+    },
     test: {
         root,
         include: ['tests/**/*.test.ts'],

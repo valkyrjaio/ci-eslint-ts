@@ -2,8 +2,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "cd ../../.. && eslint --config .github/ci/eslint/eslint.config.js src tests",
-    "fix": "cd ../../.. && eslint --fix --config .github/ci/eslint/eslint.config.js src tests"
+    "check": "cd ../../.. && npm run build && eslint --config .github/ci/eslint/eslint.config.js src tests",
+    "fix": "cd ../../.. && npm run build && eslint --fix --config .github/ci/eslint/eslint.config.js src tests"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

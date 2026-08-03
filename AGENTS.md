@@ -1,6 +1,6 @@
 # AGENTS.md
 
-**template — starter template** — Valkyrja **TypeScript** port.
+**ci-eslint — shared ESLint configuration** — Valkyrja **TypeScript** port.
 
 Before doing any work in this repo, read **both** canonical agent guides:
 
