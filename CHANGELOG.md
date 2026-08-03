@@ -1,6 +1,13 @@
 # Release Notes for 26.x
 
-## [Unreleased](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.0.0...26.x)
+## [Unreleased](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.1.0...26.x)
+
+## [v26.1.0](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.0.0...v26.1.0) - 2026-08-03
+
+* [Rules] feat: Share the whole ESLint configuration, not only the header rule by [@MelechMizrachi](https://github.com/MelechMizrachi) in https://github.com/valkyrjaio/ci-eslint-ts/pull/5
+* [Eslint] ci: Add the check script that CI needs to call by [@MelechMizrachi](https://github.com/MelechMizrachi) in https://github.com/valkyrjaio/ci-eslint-ts/pull/6
+* [npm] build: Link the package to its repository by [@MelechMizrachi](https://github.com/MelechMizrachi) in https://github.com/valkyrjaio/ci-eslint-ts/pull/7
+* [Workflow] ci: Update .github workflow refs to v26.23.0 by [@valkyrja-volundr](https://github.com/valkyrja-volundr)[bot] in https://github.com/valkyrjaio/ci-eslint-ts/pull/8
 
 ## [v26.0.0](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.0.2...v26.0.0) - 2026-08-02
 
