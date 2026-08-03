@@ -1,5 +1,5 @@
 /*
- * This file is part of the Project Template package.
+ * This file is part of the Valkyrja ESLint package.
  *
  * Copyright (c) 2016-present Melech Mizrachi
  *
@@ -11,7 +11,7 @@ import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 
 const HEADER = `/*
- * This file is part of the Project Template package.
+ * This file is part of the Valkyrja ESLint package.
  *
  * Copyright (c) 2016-present Melech Mizrachi
  *
