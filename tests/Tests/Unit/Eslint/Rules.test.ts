@@ -104,6 +104,28 @@ describe('Rules', () => {
             expect(() => Rules.getParserOptions({ ...PROJECT_OPTIONS, projectService: true })).toThrow(/both\./);
         });
 
+        // Both `getConfig` and `getParserOptions` are public and reach this guard, so a method name
+        // in the message is wrong for one of the two callers. The message names the options.
+        it('names the options rather than a method, because two methods reach the guard', () => {
+            const read = (call: () => unknown): string => {
+                try {
+                    call();
+                } catch (error) {
+                    return (error as Error).message;
+                }
+
+                throw new Error('The call was expected to throw.');
+            };
+
+            const fromParserOptions = read(() =>
+                Rules.getParserOptions({ packageName: 'Sindri', tsconfigRootDir: '/repo' }),
+            );
+            const fromConfig = read(() => Rules.getConfig({ packageName: 'Sindri', tsconfigRootDir: '/repo' }));
+
+            expect(fromParserOptions).toBe(fromConfig);
+            expect(fromParserOptions).not.toMatch(/getConfig|getParserOptions/);
+        });
+
         it('throws an exception the package can catch by its base', () => {
             expect(() => Rules.getParserOptions({ packageName: 'Sindri', tsconfigRootDir: '/repo' })).toThrow(
                 EslintInvalidArgumentException,

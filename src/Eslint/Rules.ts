@@ -114,8 +114,11 @@ export class Rules {
         // type-aware rule goes quiet while the run still reports success. Both set is ambiguous.
         // Stop on each, rather than pick one and lint less than the repository expects.
         if (hasProject === hasProjectService) {
+            // The message names the options rather than a method. Both `getConfig` and
+            // `getParserOptions` are public and reach this guard, so a method name in the text is
+            // wrong for one of the two callers.
             throw new EslintInvalidParserOptionsException(
-                'Rules.getConfig() takes either `project` or `projectService`, and it was given ' +
+                'The options take either `project` or `projectService`, and they name ' +
                     (hasProject ? 'both.' : 'neither.'),
             );
         }
