@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "noEmit": true,
+        "declaration": false,
+        "declarationMap": false,
+        "sourceMap": false,
+        "rootDir": ".",
+        "types": ["node"],
+        "paths": {
+            "vitest": ["./.github/ci/typescript/node_modules/vitest/dist/index.d.ts"]
+        }
+    },
+    "include": ["src/**/*", "tests/**/*"],
+    "exclude": ["node_modules", "dist", ".github"]
+}

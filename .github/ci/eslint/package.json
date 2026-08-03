@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "cd ../../.. && eslint --config .github/ci/eslint/eslint.config.js src tests",
+    "fix": "cd ../../.. && eslint --fix --config .github/ci/eslint/eslint.config.js src tests"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.9.5",
+    "eslint": "^10.8.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0"
+  }
+}
