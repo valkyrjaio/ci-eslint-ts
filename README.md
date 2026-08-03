@@ -28,19 +28,40 @@ itself.
 
 ## Usage
 
-Give `getRule` the repository's own package identifier, and register the rule
-that it returns:
+A repository states only what is true of itself, and `Rules` supplies the rest:
 
 ```js
-import { CopyrightHeaderFactory } from '@valkyrjaio/ci-eslint';
+import path from 'path';
+import { Rules } from '@valkyrjaio/ci-eslint';
 
-export default tseslint.config(eslint.configs.recommended, {
-    plugins: {
-        local: { rules: { 'copyright-header': CopyrightHeaderFactory.getRule('Valkyrja Framework') } },
-    },
-    rules: {
-        'local/copyright-header': 'error',
-    },
+export default Rules.getConfig({
+    packageName: 'Valkyrja Framework',
+    tsconfigRootDir: path.resolve(import.meta.dirname, '../../..'),
+    project: ['./tsconfig.tests.json'],
+});
+```
+
+`getConfig` returns the whole flat configuration: the ESLint and typescript-eslint
+presets, the shared rules, the copyright header rule, and the test-file rules.
+
+A repository picks one of two ways to find its TypeScript project. Give `project`
+when one tsconfig spans both `src` and `tests`. Give `projectService` to let
+typescript-eslint find the project, which reads `tsconfig.json` only. Give exactly
+one; `getConfig` rejects neither and both.
+
+Warning: with neither option typescript-eslint reads no type information, every
+type-aware rule goes quiet, and the run still reports success. That is why the
+guard stops rather than picking a default.
+
+Add what only this repository needs through `overrides`, which append after the
+shared entries:
+
+```js
+Rules.getConfig({
+    packageName: 'Valkyrja Application',
+    tsconfigRootDir: path.resolve(import.meta.dirname, '../../..'),
+    projectService: true,
+    overrides: [{ files: ['bin/**/*.ts'], rules: { 'no-console': 'off' } }],
 });
 ```
 
@@ -53,12 +74,16 @@ every repository to its identifier. `valkyrja-ts` takes `Valkyrja Framework`,
 
 | Member                                    | Returns                                             |
 | :---------------------------------------- | :-------------------------------------------------- |
+| `Rules.getConfig(options)`                | the whole flat configuration                        |
+| `Rules.getRules()`                        | the rules that apply to every linted file           |
+| `Rules.getTestRules()`                    | the rules that apply to a test file only            |
+| `Rules.getParserOptions(options)`         | the parser options that find the project            |
 | `CopyrightHeaderFactory.getRule(name)`    | the ESLint rule that requires the header            |
 | `CopyrightHeaderFactory.getHeader(name)`  | the full block comment, and the blank line below it |
 | `CopyrightHeaderFactory.getComment(name)` | the text between the two comment delimiters         |
 
-Each member takes the package identifier, and each one rejects a value that
-names no package.
+Each `CopyrightHeaderFactory` member takes the package identifier, and each one
+rejects a value that names no package.
 
 ## Why the package name is guarded
 
