@@ -18,12 +18,7 @@
         "rootDir": "./src",
         "skipLibCheck": true,
         "typeRoots": [".github/ci/typescript/node_modules/@types"],
-        "types": ["node"],
-        // eslint is a peer dependency, so it is installed for the TypeScript CI tool rather than
-        // at the root, and resolution from `src` does not reach it. This maps the one specifier.
-        "paths": {
-            "eslint": ["./.github/ci/typescript/node_modules/eslint/lib/types/index.d.ts"]
-        }
+        "types": ["node"]
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "dist", ".github"]
