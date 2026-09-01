@@ -1,6 +1,6 @@
 {
     "name": "@valkyrjaio/ci-eslint",
-    "version": "26.1.21",
+    "version": "26.1.22",
     "description": "Shared ESLint configuration for Valkyrja TypeScript repositories",
     "homepage": "https://www.valkyrja.io",
     "bugs": {
