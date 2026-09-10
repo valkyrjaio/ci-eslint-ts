@@ -6,7 +6,7 @@
     "fix": "cd ../../.. && npm run build && eslint --fix --config .github/ci/eslint/eslint.config.js src tests"
   },
   "devDependencies": {
-    "@types/node": "^25.9.5",
+    "@types/node": "^25.9.6",
     "eslint": "^10.10.0",
     "typescript": "^6.0.3"
   }
