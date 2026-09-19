@@ -1,6 +1,11 @@
 # Release Notes for 26.x
 
-## [Unreleased](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.1.31...26.x)
+## [Unreleased](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.1.32...26.x)
+
+## [v26.1.32](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.1.31...v26.1.32) - 2026-09-19
+
+* [Dependency] build: Update npm dependencies by [@valkyrja-volundr](https://github.com/valkyrja-volundr)[bot] in https://github.com/valkyrjaio/ci-eslint-ts/pull/69
+* [Dependency] build: Update npm dependencies by [@valkyrja-volundr](https://github.com/valkyrja-volundr)[bot] in https://github.com/valkyrjaio/ci-eslint-ts/pull/70
 
 ## [v26.1.31](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.1.30...v26.1.31) - 2026-09-18
 
