@@ -5,7 +5,7 @@
     "build": "cd ../../.. && tsc -p tsconfig.json"
   },
   "devDependencies": {
-    "@types/node": "^25.9.8",
+    "@types/node": "^25.9.9",
     "eslint": "^10.11.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.11"
