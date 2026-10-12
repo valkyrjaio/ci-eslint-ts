@@ -7,6 +7,6 @@
  */
 
 export class EslintInfo {
-    static readonly VERSION = '26.1.44' as const;
-    static readonly VERSION_BUILD_DATE_TIME = 'October 10 2026 09:04:41 MST' as const;
+    static readonly VERSION = '26.1.45' as const;
+    static readonly VERSION_BUILD_DATE_TIME = 'October 12 2026 13:04:44 MST' as const;
 }
