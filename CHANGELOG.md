@@ -1,6 +1,10 @@
 # Release Notes for 26.x
 
-## [Unreleased](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.1.52...26.x)
+## [Unreleased](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.1.53...26.x)
+
+## [v26.1.53](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.1.52...v26.1.53) - 2026-10-23
+
+* [Workflow] ci: Update .github workflow refs to v26.26.3 by [@valkyrja-volundr](https://github.com/valkyrja-volundr)[bot] in https://github.com/valkyrjaio/ci-eslint-ts/pull/108
 
 ## [v26.1.52](https://github.com/valkyrjaio/ci-eslint-ts/compare/v26.1.51...v26.1.52) - 2026-10-21
 
